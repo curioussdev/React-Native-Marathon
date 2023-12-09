@@ -1,8 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 
-const days = [...Array(24)]  //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12... 24];
-console.log(days)
+const days = [...Array(24)].map((value, index) => index + 1)  //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12... 24];
+
 export default function App() {
 
   return (
