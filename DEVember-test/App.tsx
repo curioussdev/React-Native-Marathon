@@ -15,7 +15,7 @@ export default function App() {
         columnWrapperStyle={styles.column}
         numColumns={2}
         data={days}
-        renderItem={({ item }) => <DayListItem day={item} />}
+        renderItem={({ item }) => <DayListItem day={item}/>}
         />
 
       { /*days.map((day) => (
