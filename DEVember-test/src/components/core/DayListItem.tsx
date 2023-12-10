@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     text: {
         color: '#9b4521',
         fontSize: 58,
-        fontFamily: 'Inter',
+        fontFamily: 'AmaticBold',
     
     }
 
