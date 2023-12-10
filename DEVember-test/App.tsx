@@ -10,7 +10,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <FlatList
-        // key={'#'}
+        //key={'#'}
         contentContainerStyle={styles.content}
         columnWrapperStyle={styles.column}
         numColumns={2}
