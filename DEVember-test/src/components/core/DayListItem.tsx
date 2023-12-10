@@ -9,7 +9,7 @@ type DayListItemProp = {
 export default function DayListItem({ day }: DayListItemProp) {
 
     return (
-        <Link href={'/user'} asChild>
+        <Link href={`(days)/day${day}`} asChild>
             <Pressable  style={styles.box} >
                 <Text style={styles.text}>{day}</Text>
                 
