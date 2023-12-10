@@ -2,7 +2,7 @@ import { Text, View, StyleSheet } from "react-native"
 
 type DayListItemProp = {
     day: number
-}
+};
 
 export default function DayListItem({ day }: DayListItemProp) {
     
@@ -31,7 +31,9 @@ const styles = StyleSheet.create({
 
     text: {
         color: '#9b4521',
-        fontSize: 58
+        fontSize: 58,
+        fontFamily: 'Inter',
+    
     }
 
 });
