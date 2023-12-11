@@ -2,13 +2,13 @@ import { View, Text} from 'react-native';
 import React from 'react';
 import { Stack } from 'expo-router'
 
-const DayDetailsScreen = () => {
+const Day2 = () => {
     return(
         <View>
             <Stack.Screen options={{ title: 'Day 1' }} />
-            <Text>Day Details Screen</Text>
+            <Text>Day 2</Text>
         </View>
     )
 }
 
-export default DayDetailsScreen;
+export default Day2;
