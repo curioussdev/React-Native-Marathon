@@ -1,4 +1,4 @@
-import { Stack, Link, router} from 'expo-router';
+import { Stack, Link, router } from 'expo-router';
 import React, { useState } from 'react';
 import { Text, View, StyleSheet, SafeAreaView, Pressable } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -29,7 +29,7 @@ export default function OnboardingScreen() {
 
     const onContinue = () => {
         const isLastScreen = screenIndex === onboardingSteps.length - 1
-        if(isLastScreen){
+        if (isLastScreen) {
             endOnboarding();
         } else {
             setScreenIndex(screenIndex + 1);
@@ -39,7 +39,7 @@ export default function OnboardingScreen() {
     const endOnboarding = () => {
         setScreenIndex(0);
         router.back()
-    } ;
+    };
 
     return (
         <SafeAreaView style={styles.page}>
@@ -47,6 +47,9 @@ export default function OnboardingScreen() {
 
             <View style={styles.pageContent}>
 
+                <View style={styles.stepIndicatorContainer}>
+                    <View style={styles.stepIndicator} />
+                </View>
 
                 <FontAwesome5
                     style={styles.image}
@@ -134,5 +137,16 @@ const styles = StyleSheet.create({
         paddingHorizontal: 25
 
     },
+    // steps
+
+    stepIndicatorContainer: {
+        
+    },
+
+    stepIndicator: {
+        width: 100, height: 10, backgroundColor: 'white'
+    }
+
+
 
 })  
