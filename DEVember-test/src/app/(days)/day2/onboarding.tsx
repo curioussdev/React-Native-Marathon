@@ -12,12 +12,12 @@ const onboardingSteps = [
         description: ' Daily React Native Matathon during December!',
     },
     {
-        icon: 'people-arrows',
+        icon: 'codepen',
         title: 'Learing everyday',
         description: 'Leanr by building 24 projects with React native and expo'
     },
     {
-        icon: 'people-arrows',
+        icon: 'code',
         title: 'Lets Code',
         description: 'development is achieved with small efforts every day'
     },
