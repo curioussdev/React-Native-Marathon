@@ -1,8 +1,15 @@
-import { Stack } from 'expo-router';
+import { Stack, Link } from 'expo-router';
 import React from 'react';
 import { Text, View, StyleSheet, SafeAreaView, Pressable } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
+const onboardingSteps = [
+    {
+        icon: '',
+        title: '',
+        description: '',
+    },
+];
 
 export default function OnboardingScreen() {
     return (
@@ -29,9 +36,13 @@ export default function OnboardingScreen() {
                     <View style={styles.buttonsRow}>
                         <Text style={styles.buttonText}>Skip</Text>
 
-                        <Pressable style={styles.button}>
-                            <Text style={styles.buttonText}>Continue</Text>
-                        </Pressable>
+                        <Link href="/day2/onboarding2" asChild >
+
+                            <Pressable style={styles.button}>
+                                <Text style={styles.buttonText}>Continue</Text>
+                            </Pressable>
+
+                        </Link>
                     </View>
                 </View>
             </View>
@@ -96,7 +107,7 @@ const styles = StyleSheet.create({
         color: '#FDFDFD',
         fontFamily: 'InterSemi',
         fontSize: 16,
-        
+
         padding: 15,
         paddingHorizontal: 25
 
