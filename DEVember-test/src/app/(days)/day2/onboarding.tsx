@@ -1,6 +1,6 @@
 import { Stack } from 'expo-router';
 import React from 'react';
-import { Text, View, StyleSheet, SafeAreaView } from 'react-native';
+import { Text, View, StyleSheet, SafeAreaView, Pressable } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 
@@ -25,6 +25,14 @@ export default function OnboardingScreen() {
                         Monitor your spending and see how we help you
                         manage your day-to-day family expenses!
                     </Text>
+
+                    <View style={styles.buttonsRow}>
+                        <Text style={styles.buttonText}>Skip</Text>
+
+                        <Pressable style={styles.button}>
+                            <Text style={styles.buttonText}>Continue</Text>
+                        </Pressable>
+                    </View>
                 </View>
             </View>
 
@@ -46,7 +54,7 @@ const styles = StyleSheet.create({
     pageContent: {
         padding: 20,
         flex: 1,
-        
+
     },
     image: {
         alignSelf: 'center',
@@ -58,7 +66,7 @@ const styles = StyleSheet.create({
         fontSize: 40,
         fontFamily: 'InterBold',
         letterSpacing: 1.3,
-        marginVertical: 20,
+        marginVertical: 10,
     },
     description: {
         color: 'gray',
@@ -68,5 +76,30 @@ const styles = StyleSheet.create({
     },
     footer: {
         marginTop: 'auto'
-    }
-})
+    },
+
+    buttonsRow: {
+        marginTop: 20,
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 20
+    },
+    button: {
+        backgroundColor: '#302E38',
+        //padding: 15,
+        borderRadius: 50,
+        alignItems: 'center',
+        flex: 1,
+
+    },
+    buttonText: {
+        color: '#FDFDFD',
+        fontFamily: 'InterSemi',
+        fontSize: 16,
+        
+        padding: 15,
+        paddingHorizontal: 25
+
+    },
+
+})  
