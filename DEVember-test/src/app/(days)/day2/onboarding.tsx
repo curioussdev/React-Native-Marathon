@@ -2,6 +2,7 @@ import { Stack, Link, router } from 'expo-router';
 import React, { useState } from 'react';
 import { Text, View, StyleSheet, SafeAreaView, Pressable } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
+import { StatusBar } from 'expo-status-bar';
 
 
 const onboardingSteps = [
@@ -44,10 +45,9 @@ export default function OnboardingScreen() {
     return (
         <SafeAreaView style={styles.page}>
             <Stack.Screen options={{ headerShown: false }} />
+            <StatusBar style='light' />
 
-            <View style={styles.pageContent}>
-
-                <View style={styles.stepIndicatorContainer}>
+            <View style={styles.stepIndicatorContainer}>
                     {onboardingSteps.map((step, index) => (
                         <View style={[
                             styles.stepIndicator,
@@ -55,6 +55,7 @@ export default function OnboardingScreen() {
                     ))}
                 </View>
 
+            <View style={styles.pageContent}>
                 <FontAwesome5
                     style={styles.image}
                     name={data.icon}
@@ -99,7 +100,7 @@ const styles = StyleSheet.create({
     image: {
         alignSelf: 'center',
         margin: 20,
-        letterSpacing: 1.3,
+        marginTop: 70
     },
     title: {
         color: '#fdfdfd',
@@ -145,13 +146,15 @@ const styles = StyleSheet.create({
 
     stepIndicatorContainer: {
         flexDirection: 'row',
+        gap: 5,
+        marginHorizontal: 25
     },
 
     stepIndicator: {
         flex: 1,
-        height: 5,
+        height: 3,
         backgroundColor: 'gray',
-        margin: 5,
+        
         borderRadius: 10
     }
 
