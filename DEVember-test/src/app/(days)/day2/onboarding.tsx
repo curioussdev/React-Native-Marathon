@@ -1,17 +1,46 @@
-import { Stack, Link } from 'expo-router';
-import React from 'react';
+import { Stack, Link, router} from 'expo-router';
+import React, { useState } from 'react';
 import { Text, View, StyleSheet, SafeAreaView, Pressable } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 
+
 const onboardingSteps = [
     {
-        icon: '',
-        title: '',
-        description: '',
+        icon: 'snowflake',
+        title: 'Welcome #DEVember',
+        description: ' Daily React Native Matathon during December!',
+    },
+    {
+        icon: 'people-arrows',
+        title: 'Learing everyday',
+        description: 'Leanr by building 24 projects with React native and expo'
+    },
+    {
+        icon: 'people-arrows',
+        title: 'Lets Code',
+        description: 'development is achieved with small efforts every day'
     },
 ];
 
 export default function OnboardingScreen() {
+    const [screenIndex, setScreenIndex] = useState(0);
+
+    const data = onboardingSteps[screenIndex];
+
+    const onContinue = () => {
+        const isLastScreen = screenIndex === onboardingSteps.length - 1
+        if(isLastScreen){
+            endOnboarding();
+        } else {
+            setScreenIndex(screenIndex + 1);
+        }
+    };
+
+    const endOnboarding = () => {
+        setScreenIndex(0);
+        router.back()
+    } ;
+
     return (
         <SafeAreaView style={styles.page}>
             <Stack.Screen options={{ headerShown: false }} />
@@ -21,28 +50,21 @@ export default function OnboardingScreen() {
 
                 <FontAwesome5
                     style={styles.image}
-                    name="people-arrows"
+                    name={data.icon}
                     size={100}
                     color="#CEF202"
                 />
 
                 <View style={styles.footer}>
-                    <Text style={styles.title}>Track Every Transaction</Text>
-                    <Text style={styles.description}>
-                        Monitor your spending and see how we help you
-                        manage your day-to-day family expenses!
-                    </Text>
+                    <Text style={styles.title}>{data.title}</Text>
+                    <Text style={styles.description}>{data.description}</Text>
 
                     <View style={styles.buttonsRow}>
-                        <Text style={styles.buttonText}>Skip</Text>
+                        <Text onPress={endOnboarding} style={styles.buttonText}>Skip</Text>
 
-                        <Link href="/day2/onboarding2" asChild >
-
-                            <Pressable style={styles.button}>
-                                <Text style={styles.buttonText}>Continue</Text>
-                            </Pressable>
-
-                        </Link>
+                        <Pressable onPress={onContinue} style={styles.button}>
+                            <Text style={styles.buttonText}>Continue</Text>
+                        </Pressable>
                     </View>
                 </View>
             </View>
