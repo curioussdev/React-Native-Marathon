@@ -9,13 +9,13 @@ export default function OnboardingScreen() {
         <SafeAreaView style={styles.page}>
             <Stack.Screen options={{ headerShown: false }} />
 
-            <View >
+            <View style={styles.pageContent}>
 
 
                 <FontAwesome5
                     style={styles.image}
                     name="people-arrows"
-                    size={70}
+                    size={100}
                     color="#CEF202"
                 />
 
@@ -43,6 +43,11 @@ const styles = StyleSheet.create({
 
         padding: 20
     },
+    pageContent: {
+        padding: 20,
+        flex: 1,
+        
+    },
     image: {
         alignSelf: 'center',
         margin: 20,
@@ -50,14 +55,16 @@ const styles = StyleSheet.create({
     },
     title: {
         color: '#fdfdfd',
-        fontSize: 26,
+        fontSize: 40,
         fontFamily: 'InterBold',
         letterSpacing: 1.3,
+        marginVertical: 20,
     },
     description: {
         color: 'gray',
-        fontSize: 18,
+        fontSize: 19,
         fontFamily: 'Inter',
+        lineHeight: 28
     },
     footer: {
         marginTop: 'auto'

@@ -2,7 +2,7 @@ import { Stack } from 'expo-router';
 import { useEffect } from 'react';
 import { 
     useFonts, 
-    Inter_700Bold,
+    Inter_900Black,
     Inter_600SemiBold,
     Inter_400Regular
 } from '@expo-google-fonts/inter';
@@ -16,7 +16,7 @@ export default function RootLayout() {
 
     const [fontsLoaded, fontError] = useFonts({
         InterSemi: Inter_600SemiBold,
-        InterBold: Inter_700Bold,
+        InterBold: Inter_900Black,
         Inter: Inter_400Regular,
         Amatic: AmaticSC_400Regular,
         AmaticBold: AmaticSC_700Bold,
