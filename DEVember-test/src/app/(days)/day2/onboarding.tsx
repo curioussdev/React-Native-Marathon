@@ -48,10 +48,11 @@ export default function OnboardingScreen() {
             <View style={styles.pageContent}>
 
                 <View style={styles.stepIndicatorContainer}>
-                    <View style={styles.stepIndicator} />
-                    <View style={styles.stepIndicator} />
-                    <View style={styles.stepIndicator} />
-                    
+                    {onboardingSteps.map((step, index) => (
+                        <View style={[
+                            styles.stepIndicator,
+                        {backgroundColor: index === screenIndex ? '#CEF202' : 'gray'}]} />
+                    ))}
                 </View>
 
                 <FontAwesome5
@@ -143,12 +144,12 @@ const styles = StyleSheet.create({
     // steps
 
     stepIndicatorContainer: {
-flexDirection: 'row',
+        flexDirection: 'row',
     },
 
     stepIndicator: {
-        flex: 1, 
-        height: 5, 
+        flex: 1,
+        height: 5,
         backgroundColor: 'gray',
         margin: 5,
         borderRadius: 10
