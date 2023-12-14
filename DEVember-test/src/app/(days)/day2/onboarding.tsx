@@ -1,22 +1,34 @@
 import { Stack } from 'expo-router';
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import { FontAwesome5 } from '@expo/vector-icons'; 
+import { Text, View, StyleSheet, SafeAreaView } from 'react-native';
+import { FontAwesome5 } from '@expo/vector-icons';
+
 
 export default function OnboardingScreen() {
     return (
-        <View style={styles.page}>
+        <SafeAreaView style={styles.page}>
             <Stack.Screen options={{ headerShown: false }} />
 
-            <FontAwesome5 name="people-arrows" size={24} color="#FFDA11" />
+            <View >
 
 
-            <Text style={styles.title}>Track Every Transaction</Text>
-            <Text style={styles.description}>
-            Monitor your spending and see how we help you 
-            manage your day-to-day family expenses!
-                </Text>
-        </View>
+                <FontAwesome5
+                    style={styles.image}
+                    name="people-arrows"
+                    size={70}
+                    color="#CEF202"
+                />
+
+                <View style={styles.footer}>
+                    <Text style={styles.title}>Track Every Transaction</Text>
+                    <Text style={styles.description}>
+                        Monitor your spending and see how we help you
+                        manage your day-to-day family expenses!
+                    </Text>
+                </View>
+            </View>
+
+        </SafeAreaView>
     )
 }
 
@@ -31,7 +43,11 @@ const styles = StyleSheet.create({
 
         padding: 20
     },
-    image: {},
+    image: {
+        alignSelf: 'center',
+        margin: 20,
+        letterSpacing: 1.3,
+    },
     title: {
         color: '#fdfdfd',
         fontSize: 26,
@@ -42,5 +58,8 @@ const styles = StyleSheet.create({
         color: 'gray',
         fontSize: 18,
         fontFamily: 'Inter',
+    },
+    footer: {
+        marginTop: 'auto'
     }
 })
