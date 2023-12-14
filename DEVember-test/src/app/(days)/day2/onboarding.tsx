@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     stepIndicatorContainer: {
         flexDirection: 'row',
         gap: 5,
-        marginHorizontal: 25
+        marginVertical: 25
     },
 
     stepIndicator: {
