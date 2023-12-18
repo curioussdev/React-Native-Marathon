@@ -38,20 +38,31 @@ export default function OnboardingScreen() {
         }
     };
 
+    
+    const onBack = () => {
+        const isFisrtScreen = screenIndex === 0;
+        if (isFisrtScreen) {
+            endOnboarding();
+        } else {
+            setScreenIndex(screenIndex - 1);
+        }
+    };
+
+
     const endOnboarding = () => {
         setScreenIndex(0);
         router.back()
     };
 
-    const fling = Gesture.Fling()
-    .direction(Directions.RIGHT | Directions.LEFT)
-    .onBegin((event) => {
-        console.log('FLING start', event.state)
-    })
-    .onEnd((event) => {
-        console.log('Fling end', event.state);
-        onContinue()
-    });
+    const swipeFoward = Gesture.Fling()
+    .direction(Directions.LEFT )
+    .onEnd(onContinue);
+
+    const swipeBack = Gesture.Fling()
+    .direction(Directions.RIGHT )
+    .onEnd(onBack);
+
+    const swipes = Gesture.Simultaneous(swipeBack, swipeFoward)
 
     return (
         <SafeAreaView style={styles.page}>
@@ -65,7 +76,7 @@ export default function OnboardingScreen() {
                         { backgroundColor: index === screenIndex ? '#CEF202' : 'gray' }]} />
                 ))}
             </View>
-            <GestureDetector gesture={fling}>
+            <GestureDetector gesture={swipes}>
                 <View style={styles.pageContent}>
                     <FontAwesome5
                         style={styles.image}
