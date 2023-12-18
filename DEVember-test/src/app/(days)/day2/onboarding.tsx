@@ -54,15 +54,10 @@ export default function OnboardingScreen() {
         router.back()
     };
 
-    const swipeFoward = Gesture.Fling()
-    .direction(Directions.LEFT )
-    .onEnd(onContinue);
-
-    const swipeBack = Gesture.Fling()
-    .direction(Directions.RIGHT )
-    .onEnd(onBack);
-
-    const swipes = Gesture.Simultaneous(swipeBack, swipeFoward)
+    const swipes = Gesture.Simultaneous(
+        Gesture.Fling().direction(Directions.LEFT).onEnd(onContinue), // SWIPE FOWARD,
+        Gesture.Fling().direction(Directions.RIGHT ).onEnd(onBack) // SWIPE BACK
+    )
 
     return (
         <SafeAreaView style={styles.page}>
