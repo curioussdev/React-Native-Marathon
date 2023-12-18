@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Text, View, StyleSheet, SafeAreaView, Pressable } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
+import { GestureDetector } from 'react-native-gesture-handler'
 
 
 const onboardingSteps = [
