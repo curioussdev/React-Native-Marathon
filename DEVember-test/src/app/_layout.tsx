@@ -1,7 +1,8 @@
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { Stack } from 'expo-router';
 import { useEffect } from 'react';
-import { 
-    useFonts, 
+import {
+    useFonts,
     Inter_900Black,
     Inter_600SemiBold,
     Inter_400Regular
@@ -33,13 +34,10 @@ export default function RootLayout() {
     }
 
     return (
-        <Stack
-            screenOptions={{
-                headerStyle: { backgroundColor: '#e8d3c2' }
-            }}
-        >
-
-            <Stack.Screen name='index' options={{ title: 'DEVember' }}/>
-        </Stack>
+        <GestureHandlerRootView style={{ flex: 1}}>
+            <Stack screenOptions={{ headerStyle: { backgroundColor: '#e8d3c2' } }}>
+                <Stack.Screen name='index' options={{ title: 'DEVember' }} />
+            </Stack>
+        </GestureHandlerRootView>
     )
 };

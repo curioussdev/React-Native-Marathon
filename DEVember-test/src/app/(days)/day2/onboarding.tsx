@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Text, View, StyleSheet, SafeAreaView, Pressable } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
-import { GestureDetector } from 'react-native-gesture-handler'
+import { GestureDetector, Gesture, Directions } from 'react-native-gesture-handler'
 
 
 const onboardingSteps = [
@@ -43,40 +43,48 @@ export default function OnboardingScreen() {
         router.back()
     };
 
+    const fling = Gesture.Fling()
+    .direction(Directions.RIGHT | Directions.LEFT)
+    .onEnd((event) => {
+        console.log('Fling', event);
+        onContinue()
+    });
+
     return (
         <SafeAreaView style={styles.page}>
             <Stack.Screen options={{ headerShown: false }} />
             <StatusBar style='light' />
 
             <View style={styles.stepIndicatorContainer}>
-                    {onboardingSteps.map((step, index) => (
-                        <View style={[
-                            styles.stepIndicator,
-                        {backgroundColor: index === screenIndex ? '#CEF202' : 'gray'}]} />
-                    ))}
-                </View>
+                {onboardingSteps.map((step, index) => (
+                    <View style={[
+                        styles.stepIndicator,
+                        { backgroundColor: index === screenIndex ? '#CEF202' : 'gray' }]} />
+                ))}
+            </View>
+            <GestureDetector gesture={fling}>
+                <View style={styles.pageContent}>
+                    <FontAwesome5
+                        style={styles.image}
+                        name={data.icon}
+                        size={100}
+                        color="#CEF202"
+                    />
 
-            <View style={styles.pageContent}>
-                <FontAwesome5
-                    style={styles.image}
-                    name={data.icon}
-                    size={100}
-                    color="#CEF202"
-                />
+                    <View style={styles.footer}>
+                        <Text style={styles.title}>{data.title}</Text>
+                        <Text style={styles.description}>{data.description}</Text>
 
-                <View style={styles.footer}>
-                    <Text style={styles.title}>{data.title}</Text>
-                    <Text style={styles.description}>{data.description}</Text>
+                        <View style={styles.buttonsRow}>
+                            <Text onPress={endOnboarding} style={styles.buttonText}>Skip</Text>
 
-                    <View style={styles.buttonsRow}>
-                        <Text onPress={endOnboarding} style={styles.buttonText}>Skip</Text>
-
-                        <Pressable onPress={onContinue} style={styles.button}>
-                            <Text style={styles.buttonText}>Continue</Text>
-                        </Pressable>
+                            <Pressable onPress={onContinue} style={styles.button}>
+                                <Text style={styles.buttonText}>Continue</Text>
+                            </Pressable>
+                        </View>
                     </View>
                 </View>
-            </View>
+            </GestureDetector>
 
         </SafeAreaView>
     )
@@ -155,7 +163,7 @@ const styles = StyleSheet.create({
         flex: 1,
         height: 3,
         backgroundColor: 'gray',
-        
+
         borderRadius: 10
     }
 
