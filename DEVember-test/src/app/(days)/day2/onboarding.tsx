@@ -45,8 +45,11 @@ export default function OnboardingScreen() {
 
     const fling = Gesture.Fling()
     .direction(Directions.RIGHT | Directions.LEFT)
+    .onBegin((event) => {
+        console.log('Fling start', event)
+    })
     .onEnd((event) => {
-        console.log('Fling', event);
+        console.log('Fling end', event);
         onContinue()
     });
 
