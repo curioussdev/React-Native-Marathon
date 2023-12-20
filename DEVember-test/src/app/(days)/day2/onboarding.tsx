@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import { Text, View, StyleSheet, SafeAreaView, Pressable } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
-import { GestureDetector, Gesture, Directions } from 'react-native-gesture-handler'
+import { GestureDetector, Gesture, Directions } from 'react-native-gesture-handler';
+import Animated, { FadeIn, FadeOut, BounceInRight, BounceOutLeft } from 'react-native-reanimated';
+
 
 
 const onboardingSteps = [
@@ -38,7 +40,7 @@ export default function OnboardingScreen() {
         }
     };
 
-    
+
     const onBack = () => {
         const isFisrtScreen = screenIndex === 0;
         if (isFisrtScreen) {
@@ -56,7 +58,7 @@ export default function OnboardingScreen() {
 
     const swipes = Gesture.Simultaneous(
         Gesture.Fling().direction(Directions.LEFT).onEnd(onContinue), // SWIPE FOWARD,
-        Gesture.Fling().direction(Directions.RIGHT ).onEnd(onBack) // SWIPE BACK
+        Gesture.Fling().direction(Directions.RIGHT).onEnd(onBack) // SWIPE BACK
     )
 
     return (
@@ -72,7 +74,13 @@ export default function OnboardingScreen() {
                 ))}
             </View>
             <GestureDetector gesture={swipes}>
-                <View style={styles.pageContent}>
+                <Animated.View 
+                entering={FadeIn}
+                exiting={FadeOut}
+                style={styles.pageContent}
+                key={screenIndex}
+                >
+                    
                     <FontAwesome5
                         style={styles.image}
                         name={data.icon}
@@ -92,7 +100,7 @@ export default function OnboardingScreen() {
                             </Pressable>
                         </View>
                     </View>
-                </View>
+                </Animated.View>
             </GestureDetector>
 
         </SafeAreaView>
