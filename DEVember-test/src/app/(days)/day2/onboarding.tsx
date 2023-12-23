@@ -4,7 +4,7 @@ import { Text, View, StyleSheet, SafeAreaView, Pressable } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
 import { GestureDetector, Gesture, Directions } from 'react-native-gesture-handler';
-import Animated, { FadeIn, FadeOut, BounceInRight, BounceOutLeft } from 'react-native-reanimated';
+import Animated, { FadeIn, FadeOut, SlideInRight } from 'react-native-reanimated';
 
 
 
@@ -75,7 +75,7 @@ export default function OnboardingScreen() {
             </View>
             <GestureDetector gesture={swipes}>
                 <Animated.View 
-                entering={FadeIn}
+                entering={SlideInRight}
                 exiting={FadeOut}
                 style={styles.pageContent}
                 key={screenIndex}
@@ -157,8 +157,8 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         alignItems: 'center',
         flex: 1,
-
     },
+    
     buttonText: {
         color: '#FDFDFD',
         fontFamily: 'InterSemi',
