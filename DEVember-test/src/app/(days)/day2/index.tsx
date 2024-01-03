@@ -9,7 +9,7 @@ const Day2 = () => {
             <Text>Day 2</Text>
 
             <Link href="/day2/onboarding" asChild >
-                <Button title="Go To Onoarding" />
+                <Button title="Go To Onoarding Screen" />
             </Link>
 
         </View>

@@ -36,7 +36,7 @@ export default function RootLayout() {
     return (
         <GestureHandlerRootView style={{ flex: 1}}>
             <Stack screenOptions={{ headerStyle: { backgroundColor: '#e8d3c2' } }}>
-                <Stack.Screen name='index' options={{ title: 'DEVember' }} />
+                <Stack.Screen name='index' options={{ title: '100 DIAS DE REACT NATIVE' }} />
             </Stack>
         </GestureHandlerRootView>
     )

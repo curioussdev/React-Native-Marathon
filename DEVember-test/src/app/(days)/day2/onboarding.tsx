@@ -4,7 +4,7 @@ import { Text, View, StyleSheet, SafeAreaView, Pressable } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
 import { GestureDetector, Gesture, Directions } from 'react-native-gesture-handler';
-import Animated, { FadeIn, FadeOut, SlideInRight } from 'react-native-reanimated';
+import Animated, {ZoomInEasyDown, ZoomOutEasyDown, StretchInX, StretchOutX, FadeIn, FadeOut, SlideInLeft, SlideInRight, SlideOutLeft, SlideOutRight, StretchInY, StretchOutY } from 'react-native-reanimated';
 
 
 
@@ -74,13 +74,13 @@ export default function OnboardingScreen() {
                 ))}
             </View>
             <GestureDetector gesture={swipes}>
-                <Animated.View 
-                entering={SlideInRight}
-                exiting={FadeOut}
-                style={styles.pageContent}
-                key={screenIndex}
+                <Animated.View
+                    entering={StretchInX}
+                    exiting={StretchOutX}
+                    style={styles.pageContent}
+                    key={screenIndex}
                 >
-                    
+
                     <FontAwesome5
                         style={styles.image}
                         name={data.icon}
@@ -89,8 +89,19 @@ export default function OnboardingScreen() {
                     />
 
                     <View style={styles.footer}>
-                        <Text style={styles.title}>{data.title}</Text>
-                        <Text style={styles.description}>{data.description}</Text>
+                        <Animated.Text
+                            entering={StretchInY}
+                            exiting={StretchOutY}
+                            style={styles.title}>
+                                {data.title}
+                        </Animated.Text>
+
+                        <Animated.Text 
+                        entering={ZoomInEasyDown}
+                        exiting={ZoomOutEasyDown}
+                        style={styles.description}>
+                            {data.description}
+                        </Animated.Text>
 
                         <View style={styles.buttonsRow}>
                             <Text onPress={endOnboarding} style={styles.buttonText}>Skip</Text>
@@ -158,7 +169,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flex: 1,
     },
-    
+
     buttonText: {
         color: '#FDFDFD',
         fontFamily: 'InterSemi',
