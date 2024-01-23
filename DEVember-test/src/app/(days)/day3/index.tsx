@@ -2,18 +2,18 @@ import { View, Text, Button } from 'react-native';
 import React from 'react';
 import { Link, Stack } from 'expo-router'
 
-const Day2 = () => {
+const Day3 = () => {
     return (
         <View>
             <Stack.Screen options={{ title: 'Day 3: Markdown' }} />
-            <Text>Day 2</Text>
+            <Text>Day 3</Text>
 
-            <Link href="/day2/onboarding" asChild >
-                <Button title="Go To Onoarding Screen" />
+            <Link href="/day3/editor" asChild >
+                <Button title="Go To Editor" />
             </Link>
 
         </View>
     )
 }
 
-export default Day2;
+export default Day3;
