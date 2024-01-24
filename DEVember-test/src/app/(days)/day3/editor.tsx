@@ -42,13 +42,17 @@ const EditorScreen = () => {
     );
 };
 
-const markDownStyles = {
+const markDownStyles = StyleSheet.create({
     heading1: {
-        fontSize: 35,
-        color: 'red'
+        fontSize: 40,
+        fontFamily: 'InterBlack'
         
+    },
+    heading2: {
+        fontFamily: 'InterBold',
+        color: 'gray'
     }
-};
+});
 
 const styles = StyleSheet.create({
     page: {
