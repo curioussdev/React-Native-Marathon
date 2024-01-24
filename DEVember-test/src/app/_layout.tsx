@@ -7,7 +7,7 @@ import {
     Inter_600SemiBold,
     Inter_400Regular
 } from '@expo-google-fonts/inter';
-import { AmaticSC_400Regular, AmaticSC_700Bold } from '@expo-google-fonts/amatic-sc';
+import { AmaticSC_400Regular, AmaticSC_700Bold,  } from '@expo-google-fonts/amatic-sc';
 
 import * as SplashScreen from 'expo-splash-screen';
 SplashScreen.preventAutoHideAsync();

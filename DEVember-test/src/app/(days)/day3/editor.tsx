@@ -37,20 +37,32 @@ Visit [Google](https://www.google.com) for searching.
 const EditorScreen = () => {
     return (
         <View style={styles.page}>
-            <Markdown style={markDownStyles}>{copy}</Markdown>
+        <Markdown style={markDownStyles}>{copy}</Markdown>
         </View>
     );
 };
 
 const markDownStyles = StyleSheet.create({
     heading1: {
-        fontSize: 40,
-        fontFamily: 'InterBlack'
-        
+        fontFamily: 'InterSemi',
+        color: '#404040',
+        marginTop: 15,
+        marginBottom: 10,
+
+        lineHeight: 40,
     },
     heading2: {
         fontFamily: 'InterBold',
-        color: 'gray'
+        color: '#404040',
+        marginTop: 10,
+        marginBottom: 5,
+
+        lineHeight: 20, 
+    },
+    body: {
+        fontSize: 16,
+        fontFamily: 'Inter',
+        lineHeight: 24,
     }
 });
 
