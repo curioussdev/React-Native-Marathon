@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, FlatList} from 'react-native';
+import { View, Text, StyleSheet, ScrollView} from 'react-native';
 import React from 'react';
 
 import Markdown from 'react-native-markdown-display';
@@ -36,9 +36,9 @@ Visit [Google](https://www.google.com) for searching.
 
 const EditorScreen = () => {
     return (
-        <View style={styles.page}>
+        <ScrollView style={styles.page}>
         <Markdown style={markDownStyles}>{copy}</Markdown>
-        </View>
+        </ScrollView>
     );
 };
 
