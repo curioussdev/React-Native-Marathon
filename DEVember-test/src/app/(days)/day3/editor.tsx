@@ -1,28 +1,60 @@
-import { View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet, FlatList} from 'react-native';
 import React from 'react';
 
 import Markdown from 'react-native-markdown-display';
 
-const copy = `# h1 Heading 8-)
+const copy = `# Simple Markdown Content
 
-**This is some bold text!**
+This is a paragraph of text in *italics* and **bold**. You can also have inline code like 'print("Hello, World!")'.
 
-This is normal text
+## Lists
+
+### Ordered List
+
+1. First item
+2. Second item
+3. Third item
+
+### Unordered List
+
+- Apple
+- Banana
+- Orange
+
+## Links
+
+Visit [Google](https://www.google.com) for searching.
+
+## Images
+
+![Alt text](https://placekitten.com/300/200 "A cute kitten")
+
+## Code
+
 
 `;
 
 const EditorScreen = () => {
     return (
         <View style={styles.page}>
-            <Markdown>{copy}</Markdown>
+            <Markdown style={markDownStyles}>{copy}</Markdown>
         </View>
     );
+};
+
+const markDownStyles = {
+    heading1: {
+        fontSize: 35,
+        color: 'red'
+        
+    }
 };
 
 const styles = StyleSheet.create({
     page: {
         backgroundColor: 'white',
         flex: 1,
+        padding: 10
     }
 })
 
