@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, ScrollView} from 'react-native';
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 
 import Markdown from 'react-native-markdown-display';
 
@@ -54,12 +54,12 @@ This is a paragraph of text in *italics* and **bold**. You can also have inline 
 
 `;
 
-export const MarkDownDisplay = () => {
+export const MarkDownDisplay = ({ children }: PropsWithChildren) => {
     return (
         <ScrollView style={styles.page}
             contentInsetAdjustmentBehavior='automatic'
         >
-        <Markdown style={markDownStyles}>{copy}</Markdown>
+        <Markdown style={markDownStyles}>{children}</Markdown>
         </ScrollView>
     );
 };

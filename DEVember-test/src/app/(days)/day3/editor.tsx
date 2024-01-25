@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, ScrollView} from 'react-native';
-import React from 'react';
+import React, { Children } from 'react';
 
 import Markdown from 'react-native-markdown-display';
 import { MarkDownDisplay } from '@/components/day3/MarkDownDisplay';
@@ -57,7 +57,7 @@ This is a paragraph of text in *italics* and **bold**. You can also have inline 
 
 const EditorScreen = () => {
     return (
-        <MarkDownDisplay />
+        <MarkDownDisplay>{copy}</MarkDownDisplay>
     );
 };
 
