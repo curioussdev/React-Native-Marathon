@@ -57,7 +57,7 @@ This is a paragraph of text in *italics* and **bold**. You can also have inline 
 
 const EditorScreen = () => {
     return (
-        <MarkDownDisplay>{copy}</MarkDownDisplay>
+        <MarkDownDisplay>{copy} testing</MarkDownDisplay>
     );
 };
 
