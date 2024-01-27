@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView, TextInput} from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TextInput, Pressable} from 'react-native';
 import React, { Children, useState } from 'react';
 
 import Markdown from 'react-native-markdown-display';
@@ -11,29 +11,36 @@ Hello **World**!
 `;
 
 const EditorScreen = () => {
-    const [content, setContent ] = useState(template)
+    const [content, setContent ] = useState(template);
+    const [ tab, setTab] = useState('edit');
     return (
         <View style={styles.page}>
             <View style={styles.tabsContainer}>
 
-                <View style={styles.tab}>
+                <Pressable onPress={() => setTab('edit')} 
+                style={[styles.tab, { backgroundColor: tab === 'edit' ? 'gray' : 'white'}, ]}>
                     <Text style={styles.tabText}>Edit</Text>
-                </View>
+                </Pressable>
                 
-                <View style={styles.tab}>
+                <Pressable onPress={() => setTab('preview')}
+                style={[styles.tab, { backgroundColor: tab === 'preview' ? 'gray' : 'white'}]}>
                     <Text style={styles.tabText}>Preview</Text>
-                </View>
+                </Pressable>
             </View>
 
-            <TextInput 
+            { tab === 'edit' ? (
+                <TextInput 
                 value={content} 
                 multiline 
                 numberOfLines={50}
                 style={styles.input}
                 onChangeText={setContent}
                 />
+            ) : (<MarkDownDisplay>{content}</MarkDownDisplay>) }
 
-            {/*<MarkDownDisplay>{content}</MarkDownDisplay>*/}
+            
+
+            {/**/}
         </View>
     );
 };
