@@ -8,6 +8,14 @@ const description = `
 # Markdown
 
 Integrate Markdown Content in **React Native**
+
+📚 Today's Agenda:
+- Introduction to Markdown
+- Markdown Syntax Overview
+- Setting Up React Native for Markdown
+- Implementing Markdown Rendering
+- Styling Markdown Content
+- Using Markdown in React Native Components
 `;
 
 const Day3 = () => {
