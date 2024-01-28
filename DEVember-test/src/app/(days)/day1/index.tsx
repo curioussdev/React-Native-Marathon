@@ -6,8 +6,8 @@ const DayDetailsScreen = () => {
     return(
         <View>
             <Stack.Screen options={{ title: 'Day 1' }} />
-            <Text style={{ fontFamily: 'AmaticBold', fontSize: 100}}>
-                1 Projecto por dia, este é o objectivo!
+            <Text style={{ fontFamily: 'AmaticBold', fontSize: 85}}>
+                1 Projecto por dia, este é o objectivo! E aprender inglês junto!
             </Text>
         </View>
     )
