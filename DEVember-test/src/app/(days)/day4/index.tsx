@@ -7,14 +7,15 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const description = `
 # Markdown
 
+Netflix Splash Animation
 
 `;
 
 const Day3 = () => {
     return (
-        <SafeAreaView edges={['bottom']}  style={{ flex: 1}}>
+        <SafeAreaView edges={['bottom']} style={{ flex: 1 }}>
             <Stack.Screen options={{ title: 'Day 3: Markdown' }} />
- 
+
             <MarkDownDisplay>{description}</MarkDownDisplay>
 
             <Link href="/day3/editor" asChild >
