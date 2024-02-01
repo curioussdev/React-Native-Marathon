@@ -5,9 +5,9 @@ import { MarkDownDisplay } from '@/components/day3/MarkDownDisplay';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const description = `
-# Markdown
+# Netflix Animated Spalsh SCreen
 
-Netflix Splash Animation
+
 
 `;
 
