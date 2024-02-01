@@ -6,20 +6,17 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 const description = `
 # Netflix Animated Spalsh SCreen
-
-
-
 `;
 
 const Day3 = () => {
     return (
         <SafeAreaView edges={['bottom']} style={{ flex: 1 }}>
-            <Stack.Screen options={{ title: 'Day 3: Markdown' }} />
+            <Stack.Screen options={{ title: 'Day 4: Splsh Screen' }} />
 
             <MarkDownDisplay>{description}</MarkDownDisplay>
 
-            <Link href="/day3/editor" asChild >
-                <Button title="Go To Editor" />
+            <Link href="/day4/animation" asChild >
+                <Button title="Ir para animação" />
             </Link>
 
         </SafeAreaView>
