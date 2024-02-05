@@ -3,22 +3,19 @@ import LottieView from "lottie-react-native";
 
 const AnimationScreen = () => {
     return (
-       <View>
+        <View>
+            <View>
+                <Text>Netflix Animation Screen Test</Text>
+            </View>
             <LottieView
-                autoPlay
-                style={{
-                    width: 200,
-                    height: 200,
-                    backgroundColor: "#000",
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                    
-                }}
+                style={{ width: "100%", height: "100%", backgroundColor: "#000" }}
+                autoPlay={true}
+                loop={true}
                 source={require('@assets/lotie/netflix.json')}
             />
 
-</View>
-    );
+            </View>
+                );
 };
 
-export default AnimationScreen;
+                export default AnimationScreen;
