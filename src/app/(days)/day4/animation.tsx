@@ -8,13 +8,18 @@ const AnimationScreen = () => {
                 <Text>Netflix Animation Screen Test</Text>
             </View>
             <LottieView
-                style={{ width: "100%", height: "100%", backgroundColor: "#000" }}
-                autoPlay
-                source={require('@assets/lotie/netflix.json')}
+
+                style={{
+                    width: 200,
+                    height: 200,
+                    backgroundColor: '#eee',
+                }}
+                // Find more Lottie files at https://lottiefiles.com/featured
+                source={require('@assets/lottie/netflix.json')}
             />
 
-            </View>
-                );
+        </View>
+    );
 };
 
-                export default AnimationScreen;
+export default AnimationScreen;
