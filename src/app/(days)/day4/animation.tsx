@@ -9,8 +9,7 @@ const AnimationScreen = () => {
             </View>
             <LottieView
                 style={{ width: "100%", height: "100%", backgroundColor: "#000" }}
-                autoPlay={true}
-                loop={true}
+                autoPlay
                 source={require('@assets/lotie/netflix.json')}
             />
 
