@@ -3,21 +3,21 @@ import LottieView from "lottie-react-native";
 
 const AnimationScreen = () => {
     return (
-        <View>
+       <View>
             <LottieView
-            source={require('../../../../assets/lotie/netflix.json')}
                 autoPlay
-                loop={true}
                 style={{
                     width: 200,
                     height: 200,
-                    backgroundColor: "#eee",
+                    backgroundColor: "#000",
+                    alignItems: 'center',
+                    justifyContent: 'center'
                     
                 }}
-                
+                source={require('@assets/lotie/netflix.json')}
             />
 
-        </View>
+</View>
     );
 };
 
