@@ -6,18 +6,16 @@ const AnimationScreen = () => {
         <View>
             <LottieView
                 autoPlay
-                style= {{
+                style={{
                     width: 200,
                     height: 200,
                     backgroundColor: "#eee",
                     alignSelf: 'center',
                     marginTop: 20,
                 }}
-                source={}
-            >
-                Netflix Animation Screen Test
-            
-            </LottieView>
+                source={require('../../../../assets/lotie/netflix.json')}
+            />
+
         </View>
     );
 };
