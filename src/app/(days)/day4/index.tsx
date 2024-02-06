@@ -11,7 +11,7 @@ const description = `
 const Day3 = () => {
     return (
         <SafeAreaView edges={['bottom']} style={{ flex: 1 }}>
-            <Stack.Screen options={{ title: 'Day 4: Splsh Screen' }} />
+            <Stack.Screen options={{ title: 'Day 4: Splash Screen' }} />
 
             <MarkDownDisplay>{description}</MarkDownDisplay>
 
