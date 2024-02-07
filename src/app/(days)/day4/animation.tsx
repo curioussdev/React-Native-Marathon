@@ -1,23 +1,15 @@
-import { View, Text, requireNativeComponent } from "react-native";
+import React from "react";
 import LottieView from "lottie-react-native";
 
-const AnimationScreen = () => {
+function AnimationScreen() {
     return (
-        <View>
-            <LottieView
-            
-                autoPlay
-             
-                style={{
-                    width: 200,
-                    height: 200,
-                    backgroundColor: '#000',
-                }}
-                // Find more Lottie files at https://lottiefiles.com/featured
-                source={require('@assets/lotie/animation.json')}
-            />
-        </View>
+        <LottieView
+            source={require("@assets/lotie/netflix.json")}
+            style={{ width: "100%", height: "100%" }}
+            autoPlay
+            loop
+                    />
     );
-};
+}
 
 export default AnimationScreen;
